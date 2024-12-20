@@ -25,7 +25,10 @@ logger = logging.getLogger(__name__)
 
 @app.route('/')
 def home():
-    return render_template('scrapper.html')
+    try:
+        return render_template("scrapper.html")
+    except Exception as e:
+        return f"Error: {str(e)}", 500
 
 @app.route('/scraper')
 def scraper():
