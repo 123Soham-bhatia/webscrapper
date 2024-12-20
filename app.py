@@ -15,8 +15,8 @@ template_dir = os.path.abspath(os.path.dirname(__file__))
 template_dir = os.path.join(template_dir, 'templates')
 
 app = Flask(__name__, 
-            template_folder=template_dir,
-            static_folder=template_dir)
+            template_folder="templates",
+            static_folder="templates")
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configure logging
